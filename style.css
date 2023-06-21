@@ -1,0 +1,250 @@
+@import url('https://fonts.googleapis.com/css2?family=Darumadrop+One&family=Noto+Sans+KR&display=swap');
+
+* {
+	margin: 0;
+	padding: 0;
+	-webkit-box-sizing: border-box;
+	box-sizing: border-box;
+}
+
+ul {
+	list-style: none;
+}
+
+a {
+	display: block;
+	text-decoration: none;
+}
+
+#open-btn {
+	position: absolute;
+	display: -webkit-box;
+	display: -ms-flexbox;
+	display: flex;
+	-webkit-box-pack: center;
+	-ms-flex-pack: center;
+	justify-content: center;
+	-webkit-box-align: center;
+	-ms-flex-align: center;
+	align-items: center;
+	top: 4rem;
+	left: 4rem;
+	height: 2rem;
+	width: 2rem;
+	font-size: 4rem;
+	cursor: pointer;
+	-webkit-user-select: none;
+	-moz-user-select: none;
+	-ms-user-select: none;
+	user-select: none;
+}
+
+.nav {
+	position: relative;
+	height: 100vh;
+	width: 0;
+	display: -webkit-box;
+	display: -ms-flexbox;
+	display: flex;
+	-webkit-box-pack: center;
+	-ms-flex-pack: center;
+	justify-content: center;
+	-webkit-box-align: center;
+	-ms-flex-align: center;
+	align-items: center;
+	background-color: white;
+	z-index: 1;
+	overflow: hidden;
+	-webkit-transition: width 600ms;
+	-o-transition: width 600ms;
+	transition: width 600ms;
+}
+
+.open {
+	width: 20%;
+}
+
+#close-btn {
+	position: absolute;
+	display: -webkit-box;
+	display: -ms-flexbox;
+	display: flex;
+	-webkit-box-pack: center;
+	-ms-flex-pack: center;
+	justify-content: center;
+	-webkit-box-align: center;
+	-ms-flex-align: center;
+	align-items: center;
+	top: 2rem;
+	right: 2rem;
+	width: 2rem;
+	height: 2rem;
+	font-size: 4rem;
+	cursor: pointer;
+}
+
+ul {
+	display: -webkit-box;
+	display: -ms-flexbox;
+	display: flex;
+	-webkit-box-orient: vertical;
+	-webkit-box-direction: normal;
+	-ms-flex-direction: column;
+	flex-direction: column;
+	gap: 4rem;
+}
+
+li a {
+	font-size: 2rem;
+	color: black;
+	text-transform: capitalize;
+	font-family: 'Darumadrop One', cursive;
+	white-space: nowrap;
+}
+
+img {
+	width: 100%;
+	height: 100%;
+}
+
+body {
+	height: 100vh;
+	background: radial-gradient(ellipse farthest-corner at right bottom, #fedb37 0%, #fdb931 8%, #9f7928 30%, #8a6e2f 40%, transparent 80%),
+		radial-gradient(ellipse farthest-corner at left top, #ffffff 0%, #ffffac 8%, #d1b464 25%, #5d4a1f 62.5%, #5d4a1f 100%);
+}
+
+.top-guide {
+	display: flex;
+	justify-content: space-around;
+	align-items: center;
+	position: absolute;
+	left: 50%;
+	top: 10%;
+	transform: translate(-50%);
+	width: 65%;
+	height: 5%;
+}
+
+.top-guide > div {
+	width: 4%;
+	text-align: center;
+	/* background-color: white; */
+}
+
+.side-guide {
+	display: flex;
+	flex-direction: column;
+	justify-content: space-around;
+	align-items: center;
+	position: absolute;
+	top: 18%;
+	left: 10%;
+	width: 5%;
+	height: 70%;
+}
+.side-guide > div {
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	height: 10%;
+	width: 40%;
+	/* background-color: white; */
+}
+
+/* .side-guide > div,
+.top-guide > div {
+	box-shadow: 10px 6px 20px 0px rgba(56, 56, 56, 0.75);
+	-webkit-box-shadow: 10px 6px 20px 0px rgba(56, 56, 56, 0.75);
+	-moz-box-shadow: 10px 6px 20px 0px rgba(56, 56, 56, 0.75);
+} */
+
+.top-guide p,
+.side-guide p {
+	font-size: 40px;
+	font-family: 'Darumadrop One', cursive;
+}
+
+.game-board {
+	display: flex;
+	flex-wrap: wrap;
+	position: absolute;
+	justify-content: center;
+	gap: 0.5rem;
+	top: 20%;
+	left: 50%;
+	transform: translate(-50%);
+	width: 75%;
+	height: 68%;
+}
+
+.card {
+	position: relative;
+	width: 17%;
+	height: 18%;
+	perspective: 500px;
+	cursor: pointer;
+}
+
+.content {
+	position: absolute;
+	width: 100%;
+	height: auto;
+	transition: transform 1s;
+	transform-style: preserve-3d;
+}
+.content.flip {
+	transform: rotateY(180deg);
+	transition: transform 0.5s;
+}
+
+front,
+.back {
+	position: absolute;
+	height: 100%;
+	width: 100%;
+	text-align: center;
+	backface-visibility: hidden;
+}
+
+.front > img,
+.back {
+	border-radius: 1rem;
+	border: 3px solid black;
+}
+
+.back {
+	top: 0;
+	background: #c5b358;
+	font-family: 'Noto Sans KR', sans-serif;
+	color: white;
+	transform: rotateY(180deg);
+}
+
+.back p {
+	position: absolute;
+	left: 50%;
+	top: 50%;
+	transform: translate(-50%, -50%);
+	font-size: 30px;
+	text-shadow: 1px 4px 8px #080000;
+	user-select: none;
+}
+
+@media only screen and (max-width: 1500px) {
+	header {
+		width: 70%;
+		padding: 0.5rem 0;
+	}
+
+	header h1 {
+		font-size: 2.5rem;
+	}
+
+	header span {
+		font-size: 1.5rem;
+	}
+	front,
+	.back {
+		font-size: 30px;
+	}
+}
